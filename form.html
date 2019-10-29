@@ -1,0 +1,63 @@
+<!doctype>
+<html>
+	<head>
+		<title>Tabbed form</title>
+		<script  src="js/jquery2.js" type="text/javascript"></script>
+		<script  src="js/animation.js" type="text/javascript"></script>
+		<script  src="js/validation.js" type="text/javascript"></script>
+
+		
+		<link rel="stylesheet" href="form.css" type="text/css">
+
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		   <form name="myform"  onsubmit="return validateForm()"action="#">
+		   	<ul>
+		   	<li class="title">Who are you?</li>
+		   	<li class="fields">
+		   		<label for="">First Name:</label><br>
+		   		<input type="text" id="first_name" class="req"><br>
+		   		<label for="">Middle Name:</label><br>
+		   		<input type="text" id="middle_name" ><br>
+		   		<label for="">Last Name:</label><br>
+		   		<input type="text" id="last_name" ><br>
+		   		<label for="">*Email:</label><br>
+		   		<input type="text" id="email" class="req"><br>
+		   	</li>
+		   	<li class="title">Where are you?</li>
+		   	<li class="fields">
+		   		<label for="">City:</label><br>
+		   		<input type="text" id="city" ><br>
+		   		<label for="">*State:</label><br>
+		   		<input type="text" id="state" class="req"><br>
+		   		<label for="">Country:</label><br>
+		   		<input type="text" id="country" ><br>
+		   	</li>
+		   	<li class="title">What Do you do?</li>
+		   	<li class="fields">
+		   		<label for="">*Occupation:</label><br>
+		   		<input type="text" id="occupation" class="req" ><br>
+		   		<label for="">Company:</label><br>
+		   		<input type="text" id="company" ><br>
+		   		<label for="">Comapny Location:</label><br>
+		   		<input type="text" id="location" ><br>
+		   	</li>
+		   </ul>
+		   <input type="submit" value="Submit Form">
+		   </form>
+<script>
+	$(document).ready(function(){
+	$('li.fields').filter(':nth child(n+4)').addClass('hide');
+	$('ul').on('click','li.title',function(){
+		$(this).next().slideDown(200).siblings('li.fields').slideUp(200); 
+			
+	
+			
+		})
+});
+</script>
+	</body>
+</html>
